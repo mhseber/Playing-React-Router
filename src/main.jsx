@@ -10,6 +10,7 @@ import Home from "./Componenets/NavLinks/Home.jsx";
 import Add from "./Componenets/NavLinks/Add.jsx";
 import About from "./Componenets/NavLinks/About.jsx";
 import Fire from "./Componenets/NavLinks/Fire.jsx";
+import Users from "./Componenets/Users/Users.jsx";
 
 const router = createBrowserRouter([
   {
@@ -20,6 +21,11 @@ const router = createBrowserRouter([
       { path: "about", Component: About },
       { path: "add", Component: Add },
       { path: "fire", Component: Fire },
+      {
+        path: "users",
+        loader: () => fetch("https://jsonplaceholder.typicode.com/posts"),
+        Component: Users,
+      },
     ],
   },
 ]);
